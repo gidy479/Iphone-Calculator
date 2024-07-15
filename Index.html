@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-wrap justify-center items-center min-h-screen space-x-10">
+    <!-- Light Mode Calculator -->
+    <div class="calculator bg-white rounded-3xl shadow-lg p-5 flex flex-col items-center w-80">
+        <!-- Status Bar -->
+        <div class="status-bar w-full flex justify-between items-center text-gray-600 mb-2 px-2">
+            <div class="flex items-center space-x-1">
+                <span>9:41</span>
+            </div>
+            <div class="flex items-center space-x-1">
+                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 9l4-4 4 4M4 5v14m6-4l4-4 4 4m-1-10v14" />
+                </svg>
+                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8 0-4.411 3.589-8 8-8 4.411 0 8 3.589 8 8 0 4.411-3.589 8-8 8zm0-14c-.553 0-1 .448-1 1v6c0 .552.447 1 1 1s1-.448 1-1V7c0-.552-.447-1-1-1zm1 9h-2v2h2v-2z" />
+                </svg>
+                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17 11H7a1 1 0 1 0 0 2h10a1 1 0 1 0 0-2zM4 11a1 1 0 0 0 0 2H2a1 1 0 1 0 0-2h2zm17 0h-2a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zM1 5.263C1 5.118 1.118 5 1.263 5h21.474C22.882 5 23 5.118 23 5.263V18.74C23 18.882 22.882 19 22.737 19H1.263A.263.263 0 0 1 1 18.74V5.263zM1 7h22v10H1V7z" />
+                </svg>
+                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 4.5c4.136 0 7.5 3.364 7.5 7.5S16.136 19.5 12 19.5 4.5 16.136 4.5 12 7.864 4.5 12 4.5zm0-2C6.761 2.5 2.5 6.761 2.5 12S6.761 21.5 12 21.5 21.5 17.239 21.5 12 17.239 2.5 12 2.5zm2 15.25c-.33 0-.65-.036-.961-.105-.368.354-.852.605-1.39.698.05-.215.078-.439.078-.669 0-1.346-1.164-2.438-2.6-2.438-.168 0-.333.014-.495.043-.59-.504-.98-1.24-.98-2.058 0-1.346 1.164-2.438 2.6-2.438.357 0 .701.064 1.014.178.37-.543 1.021-.94 1.761-.94 1.25 0 2.264 1.014 2.264 2.264s-1.014 2.264-2.264 2.264zM15 6c.55 0 1 .45 1 1s-.45 1-1 1-.999-.45-.999-1S14.45 6 15 6zm-3.5 7c-.55 0-1 .45-1 1s.45 1 1 1c.552 0 1-.45 1-1s-.448-1-1-1z" />
+                </svg>
+            </div>
+        </div>
+        <!-- Output -->
+        <div class="output text-right w-full mb-4 text-4xl text-gray-700">
+            <div class="text-sm text-gray-500">564 + 8 - 58</div>
+            396
+        </div>
+        <!-- Buttons -->
+        <div class="grid grid-cols-4 gap-3 w-full">
+            <button class="btn bg-gray-200 text-gray-700 rounded-full h-16 w-16">AC</button>
+            <button class="btn bg-gray-200 text-gray-700 rounded-full h-16 w-16">±</button>
+            <button class="btn bg-gray-200 text-gray-700 rounded-full h-16 w-16">%</button>
+            <button class="btn bg-orange-500 text-white rounded-full h-16 w-16">÷</button>
+
+            <button class="btn bg-gray-300 text-gray-700 rounded-full h-16 w-16">7</button>
+            <button class="btn bg-gray-300 text-gray-700 rounded-full h-16 w-16">8</button>
+            <button class="btn bg-gray-300 text-gray-700 rounded-full h-16 w-16">9</button>
+            <button class="btn bg-orange-500 text-white rounded-full h-16 w-16">×</button>
+
+            <button class="btn bg-gray-300 text-gray-700 rounded-full h-16 w-16">4</button>
+            <button class="btn bg-gray-300 text-gray-700 rounded-full h-16 w-16">5</button>
+            <button class="btn bg-gray-300 text-gray-700 rounded-full h-16 w-16">6</button>
+            <button class="btn bg-orange-500 text-white rounded-full h-16 w-16">-</button>
+
+            <button class="btn bg-gray-300 text-gray-700 rounded-full h-16 w-16">1</button>
+            <button class="btn bg-gray-300 text-gray-700 rounded-full h-16 w-16">2</button>
+            <button class="btn bg-gray-300 text-gray-700 rounded-full h-16 w-16">3</button>
+            <button class="btn bg-orange-500 text-white rounded-full h-16 w-16">+</button>
+
+            <button class="btn col-span-2 bg-gray-300 text-gray-700 rounded-full h-16 w-full">0</button>
+            <button class="btn bg-gray-300 text-gray-700 rounded-full h-16 w-16">.</button>
+            <button class="btn bg-orange-500 text-white rounded-full h-16 w-16">=</button>
+        </div>
+    </div>
+
+    <!-- Dark Mode Calculator -->
+    <div class="calculator bg-gray-900 rounded-3xl shadow-lg p-5 flex flex-col items-center w-80">
+        <!-- Status Bar -->
+        <div class="status-bar w-full flex justify-between items-center text-gray-300 mb-2 px-2">
+            <div class="flex items-center space-x-1">
+                <span>9:41</span>
+            </div>
+            <div class="flex items-center space-x-1">
+                <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 9l4-4 4 4M4 5v14m6-4l4-4 4 4m-1-10v14" />
+                </svg>
+                <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8 0-4.411 3.589-8 8-8 4.411 0 8 3.589 8 8 0 4.411-3.589 8-8 8zm0-14c-.553 0-1 .448-1 1v6c0 .552.447 1 1 1s1-.448 1-1V7c0-.552-.447-1-1-1zm1 9h-2v2h2v-2z" />
+                </svg>
+                <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17 11H7a1 1 0 1 0 0 2h10a1 1 0 1 0 0-2zM4 11a1 1 0 0 0 0 2H2a1 1 0 1 0 0-2h2zm17 0h-2a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zM1 5.263C1 5.118 1.118 5 1.263 5h21.474C22.882 5 23 5.118 23 5.263V18.74C23 18.882 22.882 19 22.737 19H1.263A.263.263 0 0 1 1 18.74V5.263zM1 7h22v10H1V7z" />
+                </svg>
+                <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 4.5c4.136 0 7.5 3.364 7.5 7.5S16.136 19.5 12 19.5 4.5 16.136 4.5 12 7.864 4.5 12 4.5zm0-2C6.761 2.5 2.5 6.761 2.5 12S6.761 21.5 12 21.5 21.5 17.239 21.5 12 17.239 2.5 12 2.5zm2 15.25c-.33 0-.65-.036-.961-.105-.368.354-.852.605-1.39.698.05-.215.078-.439.078-.669 0-1.346-1.164-2.438-2.6-2.438-.168 0-.333.014-.495.043-.59-.504-.98-1.24-.98-2.058 0-1.346 1.164-2.438 2.6-2.438.357 0 .701.064 1.014.178.37-.543 1.021-.94 1.761-.94 1.25 0 2.264 1.014 2.264 2.264s-1.014 2.264-2.264 2.264zM15 6c.55 0 1 .45 1 1s-.45 1-1 1-.999-.45-.999-1S14.45 6 15 6zm-3.5 7c-.55 0-1 .45-1 1s.45 1 1 1c.552 0 1-.45 1-1s-.448-1-1-1z" />
+                </svg>
+            </div>
+        </div>
+        <!-- Output -->
+        <div class="output text-right w-full mb-4 text-4xl text-white">
+            <div class="text-sm text-gray-500">564 + 8 - 58</div>
+            396
+        </div>
+        <!-- Buttons -->
+        <div class="grid grid-cols-4 gap-3 w-full">
+            <button class="btn bg-gray-700 text-white rounded-full h-16 w-16">AC</button>
+            <button class="btn bg-gray-700 text-white rounded-full h-16 w-16">±</button>
+            <button class="btn bg-gray-700 text-white rounded-full h-16 w-16">%</button>
+            <button class="btn bg-orange-500 text-white rounded-full h-16 w-16">÷</button>
+
+            <button class="btn bg-gray-600 text-white rounded-full h-16 w-16">7</button>
+            <button class="btn bg-gray-600 text-white rounded-full h-16 w-16">8</button>
+            <button class="btn bg-gray-600 text-white rounded-full h-16 w-16">9</button>
+            <button class="btn bg-orange-500 text-white rounded-full h-16 w-16">×</button>
+
+            <button class="btn bg-gray-600 text-white rounded-full h-16 w-16">4</button>
+            <button class="btn bg-gray-600 text-white rounded-full h-16 w-16">5</button>
+            <button class="btn bg-gray-600 text-white rounded-full h-16 w-16">6</button>
+            <button class="btn bg-orange-500 text-white rounded-full h-16 w-16">-</button>
+
+            <button class="btn bg-gray-600 text-white rounded-full h-16 w-16">1</button>
+            <button class="btn bg-gray-600 text-white rounded-full h-16 w-16">2</button>
+            <button class="btn bg-gray-600 text-white rounded-full h-16 w-16">3</button>
+            <button class="btn bg-orange-500 text-white rounded-full h-16 w-16">+</button>
+
+            <button class="btn col-span-2 bg-gray-600 text-white rounded-full h-16 w-full">0</button>
+            <button class="btn bg-gray-600 text-white rounded-full h-16 w-16">.</button>
+            <button class="btn bg-orange-500 text-white rounded-full h-16 w-16">=</button>
+        </div>
+    </div>
+</body>
+</html>
